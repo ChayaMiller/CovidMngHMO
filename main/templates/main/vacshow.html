@@ -1,0 +1,34 @@
+<!-- This page is inheritance the base page style -->
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+<div>
+	<a href="/addVac/{{id}}">Add Vaccines</a> 
+</div>
+<table class="table">
+	
+	<thead>
+		<tr>
+			<!-- <th scope="col">#</th> -->
+			<th scope="col">Vaccination Date:</th>
+			<th scope="col">Producer Name:</th>
+
+		</tr>
+	</thead>
+
+	<tbody>
+		{% if vaccines %}
+		{% for vaccine in vaccines %}  
+		<tr>  
+			<td>{{ vaccine.vacDate }}</td>  
+			<td>{{ vaccine.producer }}</td>	
+		</tr>  
+		{% endfor %} 
+		{% else %}
+		<p>The patient is not yet vaccinated</p>
+		{% endif %}
+
+	</tbody>
+</table>
+{% endblock content %}

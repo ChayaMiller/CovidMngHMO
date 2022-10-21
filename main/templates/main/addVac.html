@@ -1,0 +1,39 @@
+<!-- This page is inheritance the base page style -->
+{% extends 'main/base.html' %}
+
+{% block content %}
+<form method="POST" class="post-form" >  
+<!-- 	action="vaccine/{{patient.id}}" -->
+	{% csrf_token %}
+
+	<!-- {{form.as_ul}}  -->  
+
+	<div class="container">  
+		<h5> Enter the new vaccine information </h5>
+
+		<!-- Getting the vaccine information from the user -->
+	 <!-- {{form.as_ul}}  --> 
+		
+		<div class="form-group">
+			<input type="text" pattern="[0-9]+" id="patient_id" name="patient_id" value="{{ patient.id }}" class="form-control" style="display:none">
+			<!-- The user does not see and know this input, the vaccines are linked to the patient through this ID  -->
+		</div>
+
+
+		<div class="form-group">
+			<label for="vacDate">Vaccination Date:</label>
+			<input type="date" id="vacDate" name="vacDate" value="{{ vacDate }}">
+		</div>
+
+		<div class="form-group">
+			<label for="producer">Vaccine producer's name:</label>
+			<input type="text" id="producer" name="producer" value="{{ producer }}" class="form-control"> <br>
+		</div>
+
+		<div class="form-group"> 
+			<center><button type="submit" href="/vaccine/{{patient.id}}" class="btn btn-primary">Submit</button></center>
+		</div>
+
+	</div>
+	</form
+	{% endblock content %}

@@ -1,0 +1,62 @@
+<!-- This page is inheritance the base page style -->
+{% extends 'main/base.html' %}
+
+{% block content %}
+<form method="POST" class="post-form" action="/show">  
+	{% csrf_token %}
+
+	<!-- {{form.as_ul}}  -->  
+
+	<div class="container">  
+		<h5> Enter the new patient information </h5>
+
+		<!-- Getting patient information from the user -->
+
+		<div class="form-group">
+			<label for="name">Patient Full Name:</label>
+			<input type="text" id="name" name="name" value="{{ name }}"class="form-control">
+		</div>
+
+		 <div class="form-group">
+			<label for="Pid">Patient ID:</label>
+			<input type="text" id="Pid" name="Pid" value="{{ Pid }}" class="form-control">
+		</div> 
+		<!-- pattern="[0-9]+" -->
+
+		<div class="form-group">
+			<label for="address">Patient Address:</label>
+			<input type="text" id="address" name="address" value="{{ address }}" class="form-control">
+		</div>
+
+		<div class="form-group">
+			<label for="birthday">Birthday:</label>
+			<input type="date" id="birthday" name="birthday" value="{{ birthday }}"> <br>
+		</div>
+
+		 <div class="form-group">
+			<label for="phone">Patient Phone Number:</label>
+			<input type="text" pattern="[0-9]+" id="phone" name="phone" value="{{ phone }}" class="form-control" placeholder="0">
+		</div>
+
+		<div class="form-group">
+			<label for="mobile">Patient Mobile Number:</label>
+			<input type="text" pattern="[0-9]+" id="mobile" name="mobile" value="{{ mobile }}" class="form-control" placeholder="0">
+		</div> 
+
+		<div class="form-group">
+			<label for="sickDate">Date of receiving a positive result:</label>
+			<input type="date" id="sickDate" name="sickDate" value="{{ sickDate }}">
+		</div>
+
+		<div class="form-group">
+			<label for="recoveryDate">Recovery Date:</label>
+			<input type="date" id="recoveryDate" name="recoveryDate" value="{{ recoveryDate }}"><br>
+		</div>
+
+		<div class="form-group"> 
+			<center><button type="submit" class="btn btn-primary" onClick="alert('פציינט חדש הוכנס למאגר')">Submit</button></center>
+		</div>
+
+	</div>
+	</form
+	{% endblock content %}
