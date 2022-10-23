@@ -3,18 +3,26 @@
 
 {% block content %}
 
-<form method="POST" class="post-form" action="/update/{{patient.id}}">  
+<form method="POST" class="post-form" action="/update/{{ patient.id }}">  
 	{% csrf_token %}  
 	<div class="container">  
 
 		<h5>Update Patient Information</h5><br> 
 
+		<a href="/show">Back to Patients List</a> <br>
 		<a href="/vaccine/{{ patient.id }}">Patient Vaccines</a> <br>
 		<a href="/addVac/{{ patient.id }}">Add Vaccines</a><br><br>
 
+		<!-- <div class="form-group">  
+			<label for="photo">Select image:</label>
+  			<input type="file" id="photo" name="photo" accept="image/*" value="{{ patient.photo }}">
+  			<input type="submit"> 
+		</div>  
+ -->
 		<div class="form-group">
 			<label for="Pid">Patient ID:</label>
-			<input type="text" pattern="[0-9]+" id="Pid" name="Pid" value="{{ patient.Pid }}" class="form-control" disabled={ patient.Pid!=null }>
+			<input type="text" pattern="[0-9]+" id="Pid" name="Pid" value="{{ patient.Pid }}" class="form-control" >
+			<!-- disabled={ patient.Pid!=null } this is an error need to search for anather way-->
 		</div>
 
 		<div class="form-group">  
@@ -29,7 +37,7 @@
 
 		<div class="form-group">
 			<label for="birthday">Birthday:</label>
-			<input type="date" id="birthday" name="birthday" value="{{ patient.birthday }}"> <br>
+			<input type="date" id="birthday" name="birthday" value="{{ patient.birthday }}" > <br>
 		</div>
 
 		<div class="form-group">
@@ -53,7 +61,7 @@
 		</div>
 		
 		<div class="form-group row">  
-			<center><button type="submit" href="/show" class="btn btn-primary" onClick="alert('לקוח עודכן בהצלחה')">Update</button></center>   
+			<center><button type="submit" href="/show" class="btn btn-primary">Update</button></center>   
 		</div>  
 	</div>  
 </form> 
