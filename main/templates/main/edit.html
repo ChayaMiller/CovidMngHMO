@@ -37,7 +37,7 @@
 
 		<div class="form-group">
 			<label for="birthday">Birthday:</label>
-			<input type="date" id="birthday" name="birthday" value="{{ patient.birthday }}" > <br>
+			<input type="date" id="birthday" name="birthday" value="{{ patient.birthday}}" min="1910-01-01" max="2022-10-25"> <br>
 		</div>
 
 		<div class="form-group">
@@ -52,12 +52,12 @@
 
 		<div class="form-group">
 			<label for="sickDate">Date of receiving a positive result:</label>
-			<input type="date" id="sickDate" name="sickDate" value="{{ patient.sickDate }}">
+			<input type="date" id="sickDate" name="sickDate" value="{{ patient.sickDate }}" min="2019-12-01" max="2022-10-25">
 		</div>
 
 		<div class="form-group">
 			<label for="recoveryDate">Recovery Date:</label>
-			<input type="date" id="recoveryDate" name="recoveryDate" value="{{ patient.recoveryDate }}"><br>
+			<input type="date" id="recoveryDate" name="recoveryDate" value="{{ patient.recoveryDate }}" min="2019-12-01" max="2022-10-25"><br>
 		</div>
 		
 		<div class="form-group row">  
