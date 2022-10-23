@@ -29,4 +29,16 @@
 #### The Vaccines DB Table
 ![vaccine db screenshot](https://user-images.githubusercontent.com/15977749/197385041-9eee9ca0-b2f5-4ac0-a536-74800fb9ed22.png)
  
- 
+### Setup
+To run the project need to install it locally using git clone:
+https://github.com/ChayaMiller/CovidMngHMO.git
+
+Migrations are Django's way of propagating changes you make to your models into your database schema.
+Run the following commands:
+* python manage.py makemigrations
+* python manage.py migrate
+
+Run server in the CMD
+* python manage.py runserver
+
+
